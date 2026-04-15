@@ -34,27 +34,33 @@
     .hero-left {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1600&q=80');
+      background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=2000&q=80');
       background-size: cover;
-      background-position: center;
+      background-position: 30% center; /* shifted left to show more of the lifter */
       clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
     }
 
-    /* Right: golf simulator */
+    /* Right: your simulator image with AVIF + WebP fallback */
     .hero-right {
       position: absolute;
       inset: 0;
-      background-image: url('https://images.pexels.com/photos/6456001/pexels-photo-6456001.jpeg?auto=compress&cs=tinysrgb&w=1600');
       background-size: cover;
       background-position: center;
       clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+      background-image: url('simulator.avif');
     }
 
-    /* Dark overlay for readability */
+    @supports not (background-image: url('simulator.avif')) {
+      .hero-right {
+        background-image: url('simulator.webp');
+      }
+    }
+
+    /* Subtle overlay for balance */
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+      background: radial-gradient(circle at center, rgba(0,0,0,0.15), rgba(0,0,0,0.55));
       pointer-events: none;
     }
 
@@ -66,7 +72,7 @@
       padding: 12px 18px;
       background: rgba(0, 0, 0, 0.65);
       border-radius: 6px;
-      border: 1px solid rgba(201, 201, 201, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .brand-line {
@@ -79,38 +85,20 @@
     .brand-iron-and {
       font-size: 32px;
       letter-spacing: -0.01em;
-      color: #000000;
-      -webkit-text-stroke: 1.5px #C9C9C9;
-      text-shadow:
-        1px 1px 0 #C9C9C9,
-        -1px 1px 0 #C9C9C9,
-        1px -1px 0 #C9C9C9,
-        -1px -1px 0 #C9C9C9;
+      color: #ffffff; /* white */
     }
 
     .brand-turf {
       font-size: 32px;
       letter-spacing: -0.01em;
-      color: #6AA84F;
-      -webkit-text-stroke: 1.5px #C9C9C9;
-      text-shadow:
-        1px 1px 0 #C9C9C9,
-        -1px 1px 0 #C9C9C9,
-        1px -1px 0 #C9C9C9,
-        -1px -1px 0 #C9C9C9;
+      color: #6AA84F; /* turf green */
     }
 
     .brand-tagline {
       margin-top: 4px;
       font-size: 12px;
       letter-spacing: 0.08em;
-      color: #000000;
-      -webkit-text-stroke: 1px #FFFFFF;
-      text-shadow:
-        1px 1px 0 #FFFFFF,
-        -1px 1px 0 #FFFFFF,
-        1px -1px 0 #FFFFFF,
-        -1px -1px 0 #FFFFFF;
+      color: #ffffff; /* white */
     }
 
     @media (max-width: 768px) {
