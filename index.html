@@ -36,7 +36,7 @@
       inset: 0;
       background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=2000&q=80');
       background-size: cover;
-      background-position: 30% center; /* shifted left */
+      background-position: 30% center;
       clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
     }
 
@@ -56,7 +56,7 @@
       }
     }
 
-    /* Overlay for balance */
+    /* Overlay */
     .hero-overlay {
       position: absolute;
       inset: 0;
@@ -67,13 +67,15 @@
     /* Header */
     header.site-header {
       position: absolute;
-      top: 24px;
-      left: 32px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 18px 32px;
+      background: rgba(0, 0, 0, 0.55);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
       z-index: 10;
-      padding: 12px 18px;
-      background: rgba(0, 0, 0, 0.65);
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
     }
 
     .brand-line {
@@ -95,14 +97,14 @@
       color: #6AA84F;
     }
 
-    /* Middle hero text */
+    /* Center text */
     .center-text {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      max-width: 600px;
+      max-width: 650px;
       padding: 0 20px;
       z-index: 10;
     }
@@ -120,17 +122,39 @@
       color: #ffffff;
       font-family: Arial, sans-serif;
       font-weight: 300;
+      margin-bottom: 28px;
+    }
+
+    /* Button */
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background: #6AA84F;
+      color: #000;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      background: #7ec95a;
     }
 
     /* Footer */
     footer {
       position: absolute;
-      bottom: 20px;
+      bottom: 0;
       width: 100%;
+      padding: 16px 0;
       text-align: center;
       font-size: 14px;
       color: #ffffff;
       font-family: Arial, sans-serif;
+      background: rgba(0, 0, 0, 0.55);
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
       z-index: 10;
     }
 
@@ -141,12 +165,6 @@
 
       .hero-right {
         clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
-      }
-
-      header.site-header {
-        top: 16px;
-        left: 16px;
-        padding: 10px 14px;
       }
 
       .brand-iron-and,
@@ -160,6 +178,11 @@
 
       .center-text p {
         font-size: 16px;
+      }
+
+      .cta-btn {
+        font-size: 14px;
+        padding: 12px 22px;
       }
 
       footer {
@@ -186,6 +209,7 @@
     <div class="center-text">
       <h1>Iron & Turf</h1>
       <p>Launching the Isle of Man’s first hybrid performance facility — a 24/7 gym combined with a state‑of‑the‑art indoor golf centre.</p>
+      <a href="#" class="cta-btn">Contact the Founder</a>
     </div>
 
     <!-- Footer -->
