@@ -1,37 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iron & Turf Fitness</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <title>IRON & TURF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Bebas Neue -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Bebas Neue', sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+      color: #fff;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Left: dark gym */
+    .hero-left {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
+    }
+
+    /* Right: golf simulator */
+    .hero-right {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.pexels.com/photos/6456001/pexels-photo-6456001.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size: cover;
+      background-position: center;
+      clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+    }
+
+    /* Dark overlay for readability */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+      pointer-events: none;
+    }
+
+    header.site-header {
+      position: absolute;
+      top: 24px;
+      left: 32px;
+      z-index: 10;
+      padding: 12px 18px;
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 6px;
+      border: 1px solid rgba(201, 201, 201, 0.4);
+    }
+
+    .brand-line {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      line-height: 1;
+    }
+
+    .brand-iron-and {
+      font-size: 32px;
+      letter-spacing: -0.01em;
+      color: #000000;
+      -webkit-text-stroke: 1.5px #C9C9C9;
+      text-shadow:
+        1px 1px 0 #C9C9C9,
+        -1px 1px 0 #C9C9C9,
+        1px -1px 0 #C9C9C9,
+        -1px -1px 0 #C9C9C9;
+    }
+
+    .brand-turf {
+      font-size: 32px;
+      letter-spacing: -0.01em;
+      color: #6AA84F;
+      -webkit-text-stroke: 1.5px #C9C9C9;
+      text-shadow:
+        1px 1px 0 #C9C9C9,
+        -1px 1px 0 #C9C9C9,
+        1px -1px 0 #C9C9C9,
+        -1px -1px 0 #C9C9C9;
+    }
+
+    .brand-tagline {
+      margin-top: 4px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: #000000;
+      -webkit-text-stroke: 1px #FFFFFF;
+      text-shadow:
+        1px 1px 0 #FFFFFF,
+        -1px 1px 0 #FFFFFF,
+        1px -1px 0 #FFFFFF,
+        -1px -1px 0 #FFFFFF;
+    }
+
+    @media (max-width: 768px) {
+      .hero-left {
+        clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
+      }
+
+      .hero-right {
+        clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      header.site-header {
+        top: 16px;
+        left: 16px;
+        padding: 10px 14px;
+      }
+
+      .brand-iron-and,
+      .brand-turf {
+        font-size: 26px;
+      }
+
+      .brand-tagline {
+        font-size: 10px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <header class="header">
-        <a href="/" class="logo-link">
-            <img 
-                src="assets/logo/ironandturf-logo.webp" 
-                alt="Iron & Turf Logo" 
-                class="site-logo"
-                width="180"
-                height="auto"
-                loading="eager"
-            />
-        </a>
+  <div class="hero">
+    <div class="hero-left"></div>
+    <div class="hero-right"></div>
+    <div class="hero-overlay"></div>
 
-        <nav class="nav">
-            <a href="#about">About</a>
-            <a href="#facility">Facility</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <header class="site-header">
+      <div class="brand-line">
+        <span class="brand-iron-and">IRON &</span>
+        <span class="brand-turf">TURF</span>
+      </div>
+      <div class="brand-tagline">24/7 GYM + GOLF SIMULATOR FACILITY</div>
     </header>
-
-    <main class="hero">
-        <h1>Welcome to Iron & Turf</h1>
-        <p>24/7 Gym + Golf Simulator Facility</p>
-    </main>
-
+  </div>
 </body>
 </html>
-    
