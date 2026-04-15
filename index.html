@@ -1,96 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iron & Turf Fitness</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #ffffff;
-      color: #000000;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 40px;
-      background-color: #ffffff;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    .site-logo {
-      max-width: 320px;
-      height: auto;
-      display: block;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #000000;
-      margin-left: 25px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #00a651;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 120px 20px;
-      background-color: #f9f9f9;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #555555;
-      max-width: 600px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9rem;
-      color: #777777;
-      border-top: 1px solid #e0e0e0;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iron & Turf Fitness</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+    <header class="header">
+        <a href="/" class="logo-link">
+            <img 
+                src="assets/logo/ironandturf-logo.webp" 
+                alt="Iron & Turf Logo" 
+                class="site-logo"
+                width="180"
+                height="auto"
+                loading="eager"
+            />
+        </a>
 
-  <header>
-    <img src="assets/logo/ironandturf-logo.png" alt="Iron & Turf – 24/7 Gym + Golf Simulator Facility" class="site-logo">
-    <nav>
-      <a href="#about">About</a>
-      <a href="#facility">Facility</a>
-      <a href="#membership">Membership</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+        <nav class="nav">
+            <a href="#about">About</a>
+            <a href="#facility">Facility</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  <section class="hero">
-    <h1>Douglas, Isle of Man — Opening 2026</h1>
-    <p>Iron & Turf Fitness is the Isle of Man’s flagship hybrid gym and golf simulator facility — combining strength, precision, and performance under one roof.</p>
-  </section>
-
-  <footer>
-    © 2026 Iron & Turf Fitness — All Rights Reserved
-  </footer>
+    <main class="hero">
+        <h1>Welcome to Iron & Turf</h1>
+        <p>24/7 Gym + Golf Simulator Facility</p>
+    </main>
 
 </body>
 </html>
+    
