@@ -1,99 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Iron & Turf Fitness – Isle of Man</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron & Turf Fitness</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #0d0d0d;
-            color: #ffffff;
-        }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+    }
 
-        header {
-            padding: 20px 40px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+    .site-logo {
+      max-width: 320px;
+      height: auto;
+      display: block;
+    }
 
-        .hero {
-            height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(
-                rgba(0,0,0,0.6),
-                rgba(0,0,0,0.6)
-            ),
-            url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-        }
+    nav a {
+      text-decoration: none;
+      color: #000000;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
+    nav a:hover {
+      color: #00a651;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px;
+      background-color: #f9f9f9;
+    }
 
-        .cta {
-            padding: 14px 32px;
-            background-color: #6AA84F;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 6px;
-            transition: 0.2s;
-        }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
 
-        .cta:hover {
-            background-color: #7fc45f;
-        }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555555;
+      max-width: 600px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            opacity: 0.6;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
+      color: #777777;
+      border-top: 1px solid #e0e0e0;
+    }
+  </style>
 </head>
-
 <body>
 
-<header>IRON & TURF</header>
+  <header>
+    <img src="assets/logo/ironandturf-logo.png" alt="Iron & Turf – 24/7 Gym + Golf Simulator Facility" class="site-logo">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#facility">Facility</a>
+      <a href="#membership">Membership</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section class="hero">
-    <h1>Iron & Turf Fitness</h1>
-    <p>Launching the Isle of Man’s first hybrid performance facility — a 24/7 gym combined with a state‑of‑the‑art indoor golf centre.</p>
-    <a class="cta" href="mailto:rocky@ironandturf.im">Contact the Founder</a>
-</section>
+  <section class="hero">
+    <h1>Douglas, Isle of Man — Opening 2026</h1>
+    <p>Iron & Turf Fitness is the Isle of Man’s flagship hybrid gym and golf simulator facility — combining strength, precision, and performance under one roof.</p>
+  </section>
 
-<footer>
-    © 2026 Iron & Turf Fitness — Isle of Man
-</footer>
+  <footer>
+    © 2026 Iron & Turf Fitness — All Rights Reserved
+  </footer>
 
 </body>
 </html>

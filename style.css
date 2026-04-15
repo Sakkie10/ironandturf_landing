@@ -1,0 +1,104 @@
+/* ------------------------------
+   GLOBAL RESET & BASE STYLES
+--------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ------------------------------
+   NAVIGATION BAR
+--------------------------------*/
+nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+nav img.logo {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* ------------------------------
+   HERO SECTION
+--------------------------------*/
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 90px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 10px;
+    opacity: 0.85;
+}
+
+/* ------------------------------
+   BUTTONS
+--------------------------------*/
+.btn-primary {
+    margin-top: 40px;
+    padding: 14px 40px;
+    font-size: 22px;
+    border: 2px solid #6AA84F;
+    color: #6AA84F;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background: #6AA84F;
+    color: #0d0d0d;
+}
+
+/* ------------------------------
+   RESPONSIVE
+--------------------------------*/
+@media (max-width: 768px) {
+    nav img.logo {
+        height: 55px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .btn-primary {
+        font-size: 18px;
+        padding: 12px 30px;
+    }
+}
