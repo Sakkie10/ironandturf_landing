@@ -19,60 +19,21 @@
       font-family: 'Bebas Neue', sans-serif;
       background: #000;
       color: #fff;
-      overflow-x: hidden; /* allow vertical scroll, block sideways scroll */
-    }
-
-    .hero {
-      position: relative;
-      width: 100%;
-      min-height: 100vh; /* allows scrolling */
-    }
-
-    /* Left: gym */
-    .hero-left {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=2000&q=80');
-      background-size: cover;
-      background-position: 30% center;
-      clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
-    }
-
-    /* Right: simulator */
-    .hero-right {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
-      background-image: url('simulator.avif');
-    }
-
-    @supports not (background-image: url('simulator.avif')) {
-      .hero-right {
-        background-image: url('simulator.webp');
-      }
-    }
-
-    /* Overlay */
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(0,0,0,0.15), rgba(0,0,0,0.55));
-      pointer-events: none;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     /* Header */
     header.site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
       padding: 18px 32px;
-      background: rgba(0, 0, 0, 0.45);
-      z-index: 20;
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 20;
       backdrop-filter: blur(4px);
     }
 
@@ -93,24 +54,78 @@
       color: #6AA84F;
     }
 
-    /* Center text */
-    .center-text {
+    /* Main hero section */
+    main.hero {
       position: relative;
-      margin-top: 30vh;
-      text-align: center;
-      max-width: 650px;
-      padding: 0 20px;
-      margin-left: auto;
-      margin-right: auto;
-      z-index: 10;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 64px 20px 64px;
+      overflow: hidden;
     }
 
-    .center-text h1 {
+    .hero-inner {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      min-height: 60vh;
+    }
+
+    /* Background halves for desktop */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-left,
+    .hero-right {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-left {
+      background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=2000&q=80');
+      background-position: 30% center;
+      clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
+    }
+
+    .hero-right {
+      background-image: url('simulator.avif');
+      clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+    }
+
+    @supports not (background-image: url('simulator.avif')) {
+      .hero-right {
+        background-image: url('simulator.webp');
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(0,0,0,0.15), rgba(0,0,0,0.7));
+    }
+
+    /* Content */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .hero-content h1 {
       font-size: clamp(36px, 6vw, 64px);
       margin-bottom: 12px;
     }
 
-    .center-text p {
+    .hero-content p {
       font-size: clamp(14px, 2.5vw, 20px);
       line-height: 1.3;
       font-family: Arial, sans-serif;
@@ -118,7 +133,6 @@
       margin-bottom: 28px;
     }
 
-    /* Button */
     .cta-btn {
       display: inline-block;
       padding: 14px 28px;
@@ -139,38 +153,76 @@
     /* Footer */
     footer {
       width: 100%;
-      padding: 20px 0;
+      padding: 16px 10px;
       text-align: center;
       font-size: clamp(12px, 2vw, 14px);
       font-family: Arial, sans-serif;
-      background: rgba(0, 0, 0, 0.45);
-      margin-top: 40vh;
+      background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(4px);
     }
 
-    /* Mobile adjustments */
+    /* Tablet & down */
+    @media (max-width: 900px) {
+      main.hero {
+        padding: 48px 16px 48px;
+      }
+
+      .hero-inner {
+        min-height: 70vh;
+      }
+    }
+
+    /* Mobile: stack images instead of diagonal split */
     @media (max-width: 768px) {
+      .hero-bg {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+      }
+
+      .hero-left,
+      .hero-right {
+        position: relative;
+        clip-path: none;
+        height: 200px;
+      }
+
       .hero-left {
-        clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);
+        background-position: center;
       }
 
       .hero-right {
-        clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
+        background-position: center;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+      }
+
+      .hero-inner {
+        padding-top: 16px;
+      }
+
+      .hero-content {
+        margin-top: 16px;
       }
 
       header.site-header {
-        padding: 14px 20px;
+        padding: 14px 16px;
       }
     }
 
     /* Very small phones */
     @media (max-width: 420px) {
-      .center-text {
-        padding: 0 10px;
-      }
-
       .cta-btn {
         padding: 12px 20px;
+      }
+
+      .hero-content {
+        padding: 0 4px;
       }
     }
   </style>
@@ -185,18 +237,22 @@
     </div>
   </header>
 
-  <div class="hero">
-    <div class="hero-left"></div>
-    <div class="hero-right"></div>
-    <div class="hero-overlay"></div>
+  <!-- Hero -->
+  <main class="hero">
+    <div class="hero-inner">
+      <div class="hero-bg">
+        <div class="hero-left"></div>
+        <div class="hero-right"></div>
+        <div class="hero-overlay"></div>
+      </div>
 
-    <!-- Center text -->
-    <div class="center-text">
-      <h1>Iron & Turf Performance Hub</h1>
-      <p>Coming Soon — the Isle of Man’s first hybrid performance facility.</p>
-      <a href="#" class="cta-btn">Contact us for further enquiries</a>
+      <div class="hero-content">
+        <h1>Iron & Turf Performance Hub</h1>
+        <p>Coming Soon — the Isle of Man’s first hybrid performance facility.</p>
+        <a href="#" class="cta-btn">Contact us for further enquiries</a>
+      </div>
     </div>
-  </div>
+  </main>
 
   <!-- Footer -->
   <footer>

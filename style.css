@@ -11,26 +11,29 @@ body {
     font-family: 'Bebas Neue', sans-serif;
     background-color: #0d0d0d;
     color: #ffffff;
-    height: 100vh;
-    overflow-x: hidden;
+    min-height: 100vh;          /* allow page to grow naturally */
+    overflow-x: hidden;         /* prevent sideways scroll only */
 }
 
 /* ------------------------------
-   NAVIGATION BAR
+   NAVIGATION BAR (FIXED)
 --------------------------------*/
 nav {
     width: 100%;
-    padding: 20px 40px;
+    padding: 16px 24px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    position: absolute;
+    position: fixed;            /* stays at top on all devices */
     top: 0;
     left: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
 }
 
 nav img.logo {
-    height: 70px;
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
@@ -39,25 +42,25 @@ nav img.logo {
    HERO SECTION
 --------------------------------*/
 .hero {
-    height: 100vh;
     width: 100%;
+    min-height: 100vh;          /* full-height feel, but scrollable */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 120px 20px 60px;   /* top padding clears fixed nav */
 }
 
 .hero h1 {
-    font-size: 90px;
+    font-size: clamp(40px, 8vw, 90px);
     letter-spacing: 3px;
     font-weight: 400;
 }
 
 .hero p {
-    font-size: 22px;
-    margin-top: 10px;
+    font-size: clamp(16px, 3vw, 22px);
+    margin-top: 12px;
     opacity: 0.85;
 }
 
@@ -67,7 +70,7 @@ nav img.logo {
 .btn-primary {
     margin-top: 40px;
     padding: 14px 40px;
-    font-size: 22px;
+    font-size: clamp(16px, 3.2vw, 22px);
     border: 2px solid #6AA84F;
     color: #6AA84F;
     background: transparent;
@@ -85,20 +88,25 @@ nav img.logo {
    RESPONSIVE
 --------------------------------*/
 @media (max-width: 768px) {
+    nav {
+        padding: 12px 16px;
+    }
+
     nav img.logo {
-        height: 55px;
+        height: 50px;
     }
 
-    .hero h1 {
-        font-size: 60px;
+    .hero {
+        padding: 110px 16px 50px;
     }
+}
 
-    .hero p {
-        font-size: 18px;
+@media (max-width: 480px) {
+    .hero {
+        padding: 100px 12px 40px;
     }
 
     .btn-primary {
-        font-size: 18px;
-        padding: 12px 30px;
+        padding: 12px 28px;
     }
 }
