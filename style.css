@@ -178,6 +178,30 @@ footer {
   }
 }
 
+/* MOBILE VERSION — USE SINGLE COMBINED IMAGE */
+@media (max-width: 768px) {
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('images/hero-mobile.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Hide the split images */
+  .hero-left,
+  .hero-right {
+    display: none;
+  }
+
+  /* Keep overlay for readability */
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+  }
+}
+
 /* ------------------------------
    RESPONSIVE — MOBILE
 --------------------------------*/
