@@ -18,13 +18,23 @@ body {
 }
 
 /* LAYOUT */
+/* HEADER — Transparent like Golfzon */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 20;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0));
+
+  /* Transparent on top of hero */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0));
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+.site-header.scrolled {
+  /* Solid header when scrolling */
+  background: rgba(0,0,0,0.85);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
 .header-inner {
@@ -36,24 +46,24 @@ body {
   justify-content: space-between;
 }
 
-.logo-wrap {
+/* LOGO */
+.logo-wrap a {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .logo-img {
-  height: 32px;
+  height: 42px;
   width: auto;
+  opacity: 1;
+  transition: opacity 0.25s ease;
 }
 
-.logo-text {
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 14px;
+.logo-img:hover {
+  opacity: 0.75; /* Hover fade */
 }
 
+/* NAV */
 .header-nav {
   display: flex;
   align-items: center;
@@ -64,7 +74,8 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
 }
 
 .header-link:hover {

@@ -14,8 +14,21 @@ if (video && toggle) {
   });
 }
 
+// Scroll-activated header
+const header = document.getElementById('siteHeader');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
 // Footer year
 const yearSpan = document.getElementById('year');
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
+
+
