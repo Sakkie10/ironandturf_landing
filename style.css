@@ -1,4 +1,4 @@
-/* GLOBAL RESET */
+/* RESET */
 *,
 *::before,
 *::after {
@@ -12,9 +12,9 @@ html, body {
 }
 
 body {
-  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
   background-color: #050608;
+  color: #ffffff;
 }
 
 /* HEADER */
@@ -38,61 +38,29 @@ body {
   margin: 0 auto;
   padding: 14px 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-.logo-wrap a {
-  display: flex;
   align-items: center;
 }
 
 .logo-img {
   height: 42px;
   width: auto;
-  opacity: 1;
-  transition: opacity 0.25s ease;
 }
 
-.logo-img:hover {
-  opacity: 0.75;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.header-link {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 14px;
-  opacity: 0.85;
-  transition: opacity 0.25s ease;
-}
-
-.header-link:hover {
-  opacity: 1;
-}
-
-/* HERO LAYOUT */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: stretch;
+  align-items: center;
 }
 
 .hero-inner {
   position: relative;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* VIDEO BACKGROUND */
+/* VIDEO */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -100,15 +68,11 @@ body {
 }
 
 .hero-video {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
 }
 
-/* DARK OVERLAY */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -117,7 +81,7 @@ body {
   z-index: 1;
 }
 
-/* VIDEO TOGGLE BUTTON */
+/* VIDEO TOGGLE */
 .video-toggle {
   position: absolute;
   bottom: 24px;
@@ -130,91 +94,77 @@ body {
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
-  backdrop-filter: blur(4px);
-  transition: background 0.25s ease, transform 0.15s ease;
 }
 
-.video-toggle:hover {
-  background: rgba(0,0,0,0.8);
-  transform: translateY(-1px);
-}
-
-/* HERO COPY — DESKTOP */
-.desktop-hero {
+/* HERO BLOCK */
+.hero-block {
   position: relative;
   z-index: 3;
-  max-width: 640px;
+  max-width: 800px;
   margin-left: 80px;
   text-align: left;
-  display: block;
 }
 
-.desktop-hero h1 {
-  font-size: 56px;
-  font-weight: 700;
+/* HEADLINE */
+.hero-headline {
+  font-family: 'Handelson Six', cursive;
+  margin: 0 0 24px;
+  line-height: 1;
+}
+
+.tp {
+  font-size: 90px;
+  letter-spacing: 5px;
   line-height: 1.05;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  margin: 0 0 14px;
-  text-shadow: 0 0 12px rgba(0,0,0,0.4);
 }
 
-.desktop-hero .hero-subtitle {
+.perform {
+  font-size: 135px;
+  letter-spacing: -40px;
+  line-height: 0.85;
+}
+
+/* PARAGRAPH */
+.hero-paragraph p {
   font-size: 20px;
-  line-height: 1.5;
-  opacity: 0.9;
-  margin: 0;
-}
-
-/* HERO COPY — MOBILE */
-.mobile-hero {
-  display: none;
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-.mobile-hero h1 {
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 1.15;
-  margin: 0 0 14px;
-  text-shadow: 0 0 12px rgba(0,0,0,0.4);
-}
-
-.mobile-hero .hero-subtitle {
-  font-size: 16px;
-  line-height: 1.55;
-  opacity: 0.9;
+  letter-spacing: 20px;
+  line-height: 1.3;
+  margin: 6px 0;
 }
 
 /* FOOTER */
 .site-footer {
-  position: relative;
-  z-index: 5;
   background: #050608;
   border-top: 1px solid rgba(255,255,255,0.06);
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 16px 20px 20px;
+  padding: 16px 20px;
+  text-align: center;
   font-size: 12px;
   opacity: 0.8;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media (max-width: 768px) {
 
-  .desktop-hero {
-    display: none;
+  .hero-block {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
   }
 
-  .mobile-hero {
-    display: block;
+  .tp {
+    font-size: 52px;
+    letter-spacing: 3px;
+  }
+
+  .perform {
+    font-size: 78px;
+    letter-spacing: -25px;
+  }
+
+  .hero-paragraph p {
+    font-size: 18px;
+    letter-spacing: 10px;
+    line-height: 1.35;
   }
 
   .video-toggle {
