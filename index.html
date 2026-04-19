@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -18,20 +18,19 @@
 <body>
 
   <!-- HEADER -->
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-    <div class="logo-wrap">
-      <a href="/">
-        <img src="images/ironandturf-white.png" alt="Iron & Turf Logo" class="logo-img">
-      </a>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <a href="/">
+          <img src="images/ironandturf-white.png" alt="Iron & Turf Logo" class="logo-img">
+        </a>
+      </div>
+
+      <nav class="header-nav">
+        <a href="mailto:hello@ironandturf.im" class="header-link">Contact</a>
+      </nav>
     </div>
-
-    <nav class="header-nav">
-      <a href="mailto:hello@ironandturf.im" class="header-link">Contact</a>
-    </nav>
-  </div>
-</header>
-
+  </header>
 
   <!-- HERO -->
   <main class="hero">
@@ -43,29 +42,37 @@
           <source src="videos/hero.mp4" type="video/mp4">
         </video>
 
-        <!-- PAUSE / PLAY BUTTON -->
-        <button class="video-toggle" id="videoToggle">❚❚</button>
-
         <!-- DARK OVERLAY -->
         <div class="hero-overlay"></div>
+
+        <!-- PAUSE / PLAY BUTTON -->
+        <button class="video-toggle" id="videoToggle">❚❚</button>
       </div>
 
-      <!-- HERO CONTENT -->
-      <div class="hero-content">
-        <h1>Iron & Turf</h1>
-        <p>Coming Soon — the Isle of Man’s first hybrid performance facility.</p>
+      <!-- DESKTOP HERO COPY -->
+      <div class="hero-copy desktop-hero">
+        <h1>TRAIN. PLAY. PERFORM.</h1>
+        <p class="hero-subtitle">
+          The Isle of Man’s first hybrid performance facility.
+        </p>
+      </div>
 
-        <a href="mailto:hello@ironandturf.im" class="cta-btn">
-          Contact us for further enquiries
-        </a>
+      <!-- MOBILE HERO COPY -->
+      <div class="hero-copy mobile-hero">
+        <h1>Where Strength Meets Precision.</h1>
+        <p class="hero-subtitle">
+          A performance‑driven space for strength, golf, and real‑world conditioning.
+        </p>
       </div>
 
     </div>
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    © 2026 Iron & Turf Performance Hub — Isle of Man
+  <footer class="site-footer">
+    <div class="footer-inner">
+      © 2026 Iron & Turf Performance Hub — Isle of Man
+    </div>
   </footer>
 
   <!-- JavaScript -->
