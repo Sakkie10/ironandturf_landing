@@ -2,111 +2,236 @@
    GLOBAL RESET & BASE STYLES
 --------------------------------*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Bebas Neue', sans-serif;
-    background-color: #0d0d0d;
-    color: #ffffff;
-    min-height: 100vh;          /* allow page to grow naturally */
-    overflow-x: hidden;         /* prevent sideways scroll only */
+  font-family: 'Bebas Neue', sans-serif;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ------------------------------
-   NAVIGATION BAR (FIXED)
+   HEADER
 --------------------------------*/
-nav {
-    width: 100%;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: fixed;            /* stays at top on all devices */
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
+header.site-header {
+  width: 100%;
+  padding: 18px 32px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(4px);
 }
 
-nav img.logo {
-    height: 60px;
-    width: auto;
-    object-fit: contain;
+.brand-line {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  line-height: 1;
+}
+
+.brand-iron-and {
+  font-size: clamp(24px, 4vw, 32px);
+  color: #ffffff;
+}
+
+.brand-turf {
+  font-size: clamp(24px, 4vw, 32px);
+  color: #6AA84F;
 }
 
 /* ------------------------------
    HERO SECTION
 --------------------------------*/
-.hero {
-    width: 100%;
-    min-height: 100vh;          /* full-height feel, but scrollable */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 120px 20px 60px;   /* top padding clears fixed nav */
+main.hero {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 20px 64px;
+  overflow: hidden;
 }
 
-.hero h1 {
-    font-size: clamp(40px, 8vw, 90px);
-    letter-spacing: 3px;
-    font-weight: 400;
+.hero-inner {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 60vh;
 }
 
-.hero p {
-    font-size: clamp(16px, 3vw, 22px);
-    margin-top: 12px;
-    opacity: 0.85;
+/* Background halves for desktop */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-left,
+.hero-right {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+/* LEFT SIDE — GYM IMAGE */
+.hero-left {
+  background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=2000&q=80');
+  background-position: 30% center;
+  clip-path: polygon(0 0, 60% 0, 40% 100%, 0% 100%);
+}
+
+/* RIGHT SIDE — SIMULATOR IMAGE */
+.hero-right {
+  background-image: url('images/simulator.webp');
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+}
+
+@supports not (background-image: url('images/simulator.webp')) {
+  .hero-right {
+    background-image: url('images/simulator.webp');
+  }
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.15), rgba(0,0,0,0.7));
 }
 
 /* ------------------------------
-   BUTTONS
+   HERO CONTENT
 --------------------------------*/
-.btn-primary {
-    margin-top: 40px;
-    padding: 14px 40px;
-    font-size: clamp(16px, 3.2vw, 22px);
-    border: 2px solid #6AA84F;
-    color: #6AA84F;
-    background: transparent;
-    cursor: pointer;
-    transition: 0.3s ease;
-    letter-spacing: 1px;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
 }
 
-.btn-primary:hover {
-    background: #6AA84F;
-    color: #0d0d0d;
+.hero-content h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  font-size: clamp(14px, 2.5vw, 20px);
+  line-height: 1.3;
+  font-family: Arial, sans-serif;
+  font-weight: 300;
+  margin-bottom: 28px;
+}
+
+/* CTA BUTTON */
+.cta-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: #6AA84F;
+  color: #000;
+  font-family: Arial, sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.cta-btn:hover {
+  background: #7ec95a;
 }
 
 /* ------------------------------
-   RESPONSIVE
+   FOOTER
+--------------------------------*/
+footer {
+  width: 100%;
+  padding: 16px 10px;
+  text-align: center;
+  font-size: clamp(12px, 2vw, 14px);
+  font-family: Arial, sans-serif;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+/* ------------------------------
+   RESPONSIVE — TABLET
+--------------------------------*/
+@media (max-width: 900px) {
+  main.hero {
+    padding: 48px 16px 48px;
+  }
+
+  .hero-inner {
+    min-height: 70vh;
+  }
+}
+
+/* ------------------------------
+   RESPONSIVE — MOBILE
 --------------------------------*/
 @media (max-width: 768px) {
-    nav {
-        padding: 12px 16px;
-    }
+  .hero-bg {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
 
-    nav img.logo {
-        height: 50px;
-    }
+  .hero-left,
+  .hero-right {
+    position: relative;
+    clip-path: none;
+    height: 200px;
+  }
 
-    .hero {
-        padding: 110px 16px 50px;
-    }
+  .hero-left {
+    background-position: center;
+  }
+
+  .hero-right {
+    background-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+  }
+
+  .hero-inner {
+    padding-top: 16px;
+  }
+
+  .hero-content {
+    margin-top: 16px;
+  }
+
+  header.site-header {
+    padding: 14px 16px;
+  }
 }
 
-@media (max-width: 480px) {
-    .hero {
-        padding: 100px 12px 40px;
-    }
+/* ------------------------------
+   VERY SMALL PHONES
+--------------------------------*/
+@media (max-width: 420px) {
+  .cta-btn {
+    padding: 12px 20px;
+  }
 
-    .btn-primary {
-        padding: 12px 28px;
-    }
+  .hero-content {
+    padding: 0 4px;
+  }
 }

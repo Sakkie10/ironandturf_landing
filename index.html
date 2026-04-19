@@ -5,6 +5,9 @@
   <title>IRON & TURF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <!-- Bebas Neue -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
@@ -95,13 +98,13 @@
     }
 
     .hero-right {
-      background-image: url('simulator.webp');
+      background-image: url('images/simulator.webp');
       clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
     }
 
-    @supports not (background-image: url('simulator.webp')) {
+    @supports not (background-image: url('images/simulator.webp')) {
       .hero-right {
-        background-image: url('simulator.webp');
+        background-image: url('images/simulator.webp');
       }
     }
 
@@ -249,7 +252,11 @@
       <div class="hero-content">
         <h1>Iron & Turf</h1>
         <p>Coming Soon — the Isle of Man’s first hybrid performance facility.</p>
-        <a href="#" class="cta-btn">Contact us for further enquiries</a>
+
+        <!-- Updated mailto link -->
+        <a href="mailto:hello@ironandturf.im" class="cta-btn">
+          Contact us for further enquiries
+        </a>
       </div>
     </div>
   </main>
