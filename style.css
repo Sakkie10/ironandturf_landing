@@ -122,7 +122,7 @@ body {
 
 /* HEADLINE */
 .hero-headline {
-  font-family: 'Handelson Six', cursive;
+  font-family: 'Handelson Six';
   margin: 0 0 24px;
   line-height: 1;
 }
