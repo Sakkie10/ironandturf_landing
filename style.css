@@ -47,6 +47,21 @@ body {
   width: auto;
 }
 
+/* HEADER NAV LINK */
+.header-nav a,
+.header-link {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.header-nav a:hover,
+.header-link:hover {
+  opacity: 0.8;
+  text-decoration: none !important;
+}
+
 /* HERO */
 .hero {
   min-height: 100vh;
