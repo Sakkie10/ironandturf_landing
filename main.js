@@ -1,19 +1,23 @@
 // FADE IN ON LOAD
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
+  revealOnScroll();
 });
 
 // HEADER SCROLL
 const header = document.getElementById('siteHeader');
 
 if (header) {
-  window.addEventListener('scroll', () => {
+  const updateHeaderState = () => {
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
-  });
+  };
+
+  updateHeaderState();
+  window.addEventListener('scroll', updateHeaderState);
 }
 
 // VIDEO CONTROL
@@ -21,39 +25,48 @@ const video = document.getElementById('heroVideo');
 const toggle = document.getElementById('videoToggle');
 
 if (video && toggle) {
+  const updateVideoButton = () => {
+    if (video.paused) {
+      toggle.textContent = '▶';
+      toggle.classList.add('paused');
+      toggle.setAttribute('aria-label', 'Play background video');
+    } else {
+      toggle.textContent = '❚❚';
+      toggle.classList.remove('paused');
+      toggle.setAttribute('aria-label', 'Pause background video');
+    }
+  };
 
-  // Pause on mobile
   if (window.innerWidth < 768) {
     video.pause();
-    toggle.textContent = '▶';
   }
+
+  updateVideoButton();
 
   toggle.addEventListener('click', () => {
     if (video.paused) {
       video.play();
-      toggle.textContent = '❚❚';
-      toggle.classList.remove('paused');
     } else {
       video.pause();
-      toggle.textContent = '▶';
-      toggle.classList.add('paused');
     }
+
+    updateVideoButton();
   });
 }
 
 // SCROLL REVEAL
 const revealElements = document.querySelectorAll('.reveal');
 
-const revealOnScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85;
+function revealOnScroll() {
+  const triggerBottom = window.innerHeight * 0.88;
 
-  revealElements.forEach(el => {
-    const top = el.getBoundingClientRect().top;
+  revealElements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
 
-    if (top < triggerBottom) {
-      el.classList.add('visible');
+    if (elementTop < triggerBottom) {
+      element.classList.add('visible');
     }
   });
-};
+}
 
 window.addEventListener('scroll', revealOnScroll);

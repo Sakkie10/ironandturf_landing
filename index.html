@@ -37,7 +37,6 @@
   <main class="hero">
     <div class="hero-inner">
 
-      <!-- VIDEO -->
       <div class="hero-bg">
         <video autoplay muted loop playsinline class="hero-video" id="heroVideo" poster="images/hero-poster.jpg">
           <source src="videos/hero.mp4" type="video/mp4">
@@ -45,10 +44,10 @@
 
         <div class="hero-overlay"></div>
 
-        <button class="video-toggle" id="videoToggle">❚❚</button>
+        <button class="video-toggle" id="videoToggle" aria-label="Pause background video">❚❚</button>
       </div>
 
-      <!-- TEXT IMAGES -->
+      <!-- HERO TEXT IMAGES -->
       <div class="hero-text-layer">
         <div class="hero-tagline">
           <img src="images/hero-tagline.webp" alt="Train Play Perform">
@@ -62,14 +61,25 @@
     </div>
   </main>
 
-  <!-- NEXT SECTION (NEW) -->
+  <!-- INTRO -->
   <section class="intro reveal">
     <div class="intro-inner">
-      <h2>The Hybrid Performance Facility</h2>
+      <h2>The Island’s Hybrid Performance Facility</h2>
       <p>
-        Strength training. Turf performance. Golf simulation.
-        Built for athletes, competitors, and those who train with intent.
+        A modern 24/7 training environment combining strength, conditioning, boxing,
+        HIIT, calisthenics, and indoor golf simulation — built for athletes, golfers,
+        competitors, and those who train with intent.
       </p>
+    </div>
+  </section>
+
+  <!-- WORD CLOUD -->
+  <section class="brand-cloud reveal" aria-label="Iron and Turf brand word cloud">
+    <div class="brand-cloud-inner">
+      <picture>
+        <source srcset="images/wordcloud.webp" type="image/webp">
+        <img src="images/wordcloud.png" alt="Iron & Turf brand word cloud featuring words such as performance, precision, power, strength, conditioning, and community">
+      </picture>
     </div>
   </section>
 
@@ -81,6 +91,5 @@
   </footer>
 
   <script src="main.js"></script>
-
 </body>
 </html>
