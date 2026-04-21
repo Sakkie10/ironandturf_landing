@@ -160,20 +160,20 @@ body {
   margin: 6px 0;
 }
 
-/* HERO TEXT IMAGES LAYER — FINAL FIXED VERSION */
+/* HERO TEXT IMAGES LAYER — UPDATED */
 .hero-text-layer {
   position: absolute;
-  top: 22%; /* moves block down from header */
+  top: 17%; /* moved UP by ~5% */
   left: 0;
   width: 100%;
-  z-index: 10; /* ABOVE overlay + video */
+  z-index: 10; /* above overlay + video */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   pointer-events: none;
 }
 
-/* TOP TAGLINE IMAGE — PERFECT SIZE */
+/* TOP TAGLINE IMAGE — unchanged (perfect size) */
 .hero-tagline img {
   width: 1800px;
   max-width: 90%;
@@ -182,7 +182,7 @@ body {
   display: block;
 }
 
-/* MAIN TEXT BLOCK IMAGE — NOW VISIBLE + PROPORTIONAL */
+/* MAIN TEXT BLOCK IMAGE — FIXED VISIBILITY + POSITION */
 .hero-text {
   margin-top: 6px; /* tight spacing */
 }
@@ -193,8 +193,10 @@ body {
   margin-left: 80px;
   height: auto;
   display: block;
-  z-index: 11; /* ensure ABOVE overlay */
+
+  /* FIX: ensure it appears above overlay */
   position: relative;
+  z-index: 20;
 }
 
 /* FOOTER */
