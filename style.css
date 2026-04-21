@@ -226,3 +226,24 @@ body {
     margin-top: 10px;
   }
 }
+/* DEBUG — FORCE HERO-TEXT TO SHOW */
+.hero-text {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  height: auto !important;
+}
+
+.hero-text img {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  position: fixed !important;
+  top: 200px !important;
+  left: 200px !important;
+  width: 300px !important;
+  z-index: 999999 !important;
+
+  border: 5px solid red !important;
+}
