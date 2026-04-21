@@ -160,42 +160,46 @@ body {
   margin: 6px 0;
 }
 
-/* HERO TEXT IMAGES LAYER — FINAL */
+/* HERO TEXT IMAGES LAYER — OVERLAPPING LAYERS */
 .hero-text-layer {
   position: absolute;
-  top: 4%; /* EXTREME lift — was 8% */
+  top: 0; /* both images start at the same canvas origin */
   left: 0;
   width: 100%;
-  z-index: 30; /* stronger stacking */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  height: 100%;
+  z-index: 20;
   pointer-events: none;
 }
 
-/* TAGLINE — perfect size */
+/* TOP TAGLINE IMAGE — LAYER 1 */
+.hero-tagline {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .hero-tagline img {
-  width: 1800px;
-  max-width: 90%;
-  margin-left: 80px;
+  width: 1920px;
+  max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* MAIN TEXT — MASSIVE LIFT + VISIBILITY FIX */
+/* MAIN TEXT IMAGE — LAYER 2 (sits on top of tagline) */
 .hero-text {
-  margin-top: -120px; /* 3× stronger lift */
+  position: absolute;
+  top: 0; /* SAME origin as tagline */
+  left: 0;
 }
 
 .hero-text img {
-  position: fixed !important;
-  top: 100px !important;
-  left: 100px !important;
-  width: 400px !important;
-  z-index: 99999 !important;
-  border: 4px solid red !important;
+  width: 1920px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  z-index: 30; /* sits above tagline */
+  position: relative;
 }
-
 
 /* FOOTER */
 .site-footer {
