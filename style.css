@@ -163,10 +163,10 @@ body {
 /* HERO TEXT IMAGES LAYER — UPDATED */
 .hero-text-layer {
   position: absolute;
-  top: 17%; /* moved UP by ~5% */
+  top: 8%; /* was 17% — now MUCH higher */
   left: 0;
   width: 100%;
-  z-index: 10; /* above overlay + video */
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
