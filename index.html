@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <title>IRON & TURF</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Handelson+Six&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -37,9 +37,9 @@
   <main class="hero">
     <div class="hero-inner">
 
-      <!-- VIDEO BACKGROUND -->
+      <!-- VIDEO -->
       <div class="hero-bg">
-        <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+        <video autoplay muted loop playsinline class="hero-video" id="heroVideo" poster="images/hero-poster.jpg">
           <source src="videos/hero.mp4" type="video/mp4">
         </video>
 
@@ -48,23 +48,30 @@
         <button class="video-toggle" id="videoToggle">❚❚</button>
       </div>
 
-      <!-- HERO TEXT IMAGES -->
+      <!-- TEXT IMAGES -->
       <div class="hero-text-layer">
-
-        <!-- TOP TAGLINE IMAGE -->
         <div class="hero-tagline">
           <img src="images/hero-tagline.webp" alt="Train Play Perform">
         </div>
 
-        <!-- MAIN TEXT BLOCK IMAGE -->
         <div class="hero-text">
-          <img src="images/hero-text.webp" alt="Iron & Turf Performance Hub Description">
+          <img src="images/hero-text.webp" alt="Iron & Turf Performance Hub">
         </div>
-
       </div>
 
     </div>
   </main>
+
+  <!-- NEXT SECTION (NEW) -->
+  <section class="intro reveal">
+    <div class="intro-inner">
+      <h2>The Hybrid Performance Facility</h2>
+      <p>
+        Strength training. Turf performance. Golf simulation.
+        Built for athletes, competitors, and those who train with intent.
+      </p>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -73,7 +80,6 @@
     </div>
   </footer>
 
-  <!-- JavaScript -->
   <script src="main.js"></script>
 
 </body>
