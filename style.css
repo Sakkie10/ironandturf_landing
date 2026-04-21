@@ -163,17 +163,17 @@ body {
 /* HERO TEXT IMAGES LAYER — FINAL */
 .hero-text-layer {
   position: absolute;
-  top: 8%; /* already correct, keeps tagline perfect */
+  top: 4%; /* EXTREME lift — was 8% */
   left: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 30; /* stronger stacking */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   pointer-events: none;
 }
 
-/* TOP TAGLINE IMAGE — PERFECT SIZE */
+/* TAGLINE — perfect size */
 .hero-tagline img {
   width: 1800px;
   max-width: 90%;
@@ -182,20 +182,20 @@ body {
   display: block;
 }
 
-/* MAIN TEXT BLOCK IMAGE — PULLED UP + VISIBLE */
+/* MAIN TEXT — MASSIVE LIFT + VISIBILITY FIX */
 .hero-text {
-  margin-top: -40px; /* pulls second image up 3× */
+  margin-top: -120px; /* 3× stronger lift */
 }
 
 .hero-text img {
-  width: 1500px;      /* slightly smaller so it fits above the fold */
+  width: 1400px;      /* slightly smaller so it fits above the fold */
   max-width: 85%;
   margin-left: 80px;
   height: auto;
   display: block;
 
   position: relative;
-  z-index: 25; /* forces visibility above overlay */
+  z-index: 40; /* guaranteed above overlay */
 }
 
 /* FOOTER */
