@@ -54,7 +54,7 @@ img {
 }
 
 .logo-img {
-  height: 32px;
+  height: 28px;
   width: auto;
 }
 
@@ -206,13 +206,12 @@ img {
 
 /* INTRO */
 .intro {
-  padding: 110px 20px 100px;
+  padding: 110px 0 100px;  /* remove the 20px side padding */
   background: #050608;
 }
 
 .intro-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   padding-left: clamp(28px, 6vw, 110px);
   padding-right: clamp(28px, 6vw, 110px);
   display: grid;
