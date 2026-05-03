@@ -46,9 +46,8 @@ img {
 }
 
 .header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 14px 20px;
+  width: 100%;
+  padding: 14px clamp(28px, 6vw, 110px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -214,6 +213,8 @@ img {
 .intro-inner {
   max-width: 1200px;
   margin: 0 auto;
+  padding-left: clamp(28px, 6vw, 110px);
+  padding-right: clamp(28px, 6vw, 110px);
   display: grid;
   grid-template-columns: minmax(0, 1fr) 420px;
   gap: 48px;
