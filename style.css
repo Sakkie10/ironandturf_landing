@@ -215,7 +215,7 @@ img {
   padding-left: clamp(28px, 6vw, 110px);
   padding-right: clamp(28px, 6vw, 110px);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 420px;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 540px);
   gap: 48px;
   align-items: center;
 }
