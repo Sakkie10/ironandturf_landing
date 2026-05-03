@@ -252,13 +252,13 @@ img {
 }
 
 .intro-wordcloud img {
-  width: 100%;
-  max-width: 420px;
-  max-height: 240px;
+  width: auto;
+  height: clamp(380px, 48vh, 540px);
   object-fit: contain;
   margin-left: auto;
   opacity: 0.58;
   transition: opacity 0.4s ease, transform 0.4s ease;
+  display: block;
 }
 
 .intro-wordcloud img:hover {
