@@ -7,38 +7,33 @@
   <meta name="theme-color" content="#000000">
 
     <!-- Favicon -->
-<link rel="icon" type="image/png" href="/favicon.png?v=21">
-<link rel="shortcut icon" href="/favicon.ico?v=21">
-<link rel="apple-touch-icon" href="/favicon.png?v=21">
+<link rel="icon" type="image/png" href="/favicon.png?v=11">
+<link rel="shortcut icon" href="/favicon.ico?v=11">
+<link rel="apple-touch-icon" href="/favicon.png?v=11">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 
 <body>
 
   <!-- HEADER -->
-<header class="site-header" id="siteHeader">
-  <div class="header-inner">
-
-    <div class="logo-wrap">
-      <a href="/">
-        <picture>
-          <source srcset="images/ironandturf-white.webp" type="image/webp">
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <a href="/">
           <img src="images/ironandturf-white.png" alt="Iron & Turf Logo" class="logo-img">
-        </picture>
-      </a>
+        </a>
+      </div>
+
+      <nav class="header-nav">
+        <a href="mailto:hello@ironandturf.im" class="header-link">Contact</a>
+      </nav>
     </div>
-
-    <nav class="header-nav">
-      <a href="mailto:hello@ironandturf.im" class="header-link">Contact</a>
-    </nav>
-
-  </div>
-</header>
+  </header>
 
   <!-- HERO -->
   <main class="hero">
@@ -46,7 +41,7 @@
 
       <div class="hero-bg">
         <video autoplay muted loop playsinline class="hero-video" id="heroVideo" poster="images/hero-poster.jpg">
-          <source src="videos/hero2.mp4" type="video/mp4">
+          <source src="videos/hero.mp4" type="video/mp4">
         </video>
 
         <div class="hero-overlay"></div>
@@ -84,34 +79,28 @@
   </main>
 
   <!-- INTRO -->
-<section class="intro reveal">
-  <div class="intro-inner">
-    <div class="intro-copy">
-      <h2>The Island’s Hybrid Performance Facility</h2>
+  <section class="intro reveal">
+    <div class="intro-inner">
+      <div class="intro-copy">
+        <h2>The Island’s Hybrid Performance Facility</h2>
+        <p>
+          A modern 24/7 training environment combining strength, conditioning, boxing,
+          HIIT, calisthenics, and indoor golf simulation — built for athletes, golfers,
+          competitors, and those who train with intent.
+        </p>
+      </div>
 
-      <p>
-        A modern 24/7 training environment combining strength, conditioning, boxing,
-        HIIT, calisthenics, and indoor golf simulation — built for athletes, golfers,
-        competitors, and those who train with intent.
-      </p>
-
-      <div class="launch-note">
-        <span>OPENING 2027</span>
-        <small>Now in development.</small>
+      <div class="intro-wordcloud" aria-label="Iron and Turf brand word cloud">
+        <picture>
+          <source srcset="images/wordcloud.webp?v=11" type="image/webp">
+          <img
+            src="images/wordcloud.png?7"
+            alt="Iron & Turf brand word cloud featuring words such as performance, precision, power, strength, conditioning, and community"
+          >
+        </picture>
       </div>
     </div>
-
-    <div class="intro-wordcloud" aria-label="Iron and Turf brand word cloud">
-      <picture>
-        <source srcset="images/wordcloud.webp?v=21" type="image/webp">
-        <img
-          src="images/wordcloud.png?v=21"
-          alt="Iron & Turf brand word cloud featuring words such as performance, precision, power, strength, conditioning, and community"
-        >
-      </picture>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -120,6 +109,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=21"></script>
+  <script src="main.js?v=11"></script>
 </body>
 </html>
